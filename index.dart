@@ -16,8 +16,8 @@ void main() {
     Weekday.FR: ["", "VL: AUD", "VL: Mathe", "", "", ""],
   };
   Weekday day = Weekday.MO;
-  printWeekSchedule(student1);
-  printDaySchedule(student1, day);
+  //printWeekSchedule(student1);
+  //printDaySchedule(student1, day);
   printWhenMensa(student1, student2, day);
 }
 
@@ -29,6 +29,15 @@ printDaySchedule() {
 
 }
 
-printWhenMensa() {
- //jdas
+printWhenMensa(Map student1, Map student2, Weekday day) {
+
+  List<int> eat = [];
+
+  for (int i = 0; i < 6; i++){
+    if ((student1[day][i] == "") && (student2[day][i] == "")){
+      eat.add(i+1);
+    }
+  }
+  
+  print("Ihr könnt in folgenden Doppelstunden essen gehen: ${eat}");
 }

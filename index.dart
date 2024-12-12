@@ -1,6 +1,39 @@
-class Main {
-  static void main() {
-    print('Hello, World!');
-    //hallo wilhelm
-  }
+enum Weekday {MO, DI, MI, DO, FR}
+
+void main() {
+  Map<Weekday, List<String>> student1 = {
+    Weekday.MO: ["", "", "VL: Mathe", "Ü: Seminargruppe", "", ""],
+    Weekday.DI: ["", "", "", "", "", ""],
+    Weekday.MI: ["", "Ü: EMI", "VL: Mathe", "Ü: AUD", "", ""],
+    Weekday.DO: ["Ü: Mathe", "Ü: Mathe", "VL: EMI", "", "", ""],
+    Weekday.FR: ["", "VL: AUD", "VL: Mathe", "", "", ""],
+  };
+  Map<Weekday, List<String>> student2 = {
+    Weekday.MO: ["VL: Mathe", "Ü: Seminargruppe", "", "", "", ""],
+    Weekday.DI: ["", "", "", "", "", ""],
+    Weekday.MI: ["Ü: EMI", "", "VL: Mathe", "", "Ü: Mathe", "Ü: AuD"],
+    Weekday.DO: ["", "", "VL: EMI", "", "", ""],
+    Weekday.FR: ["", "VL: AUD", "VL: Mathe", "", "", ""],
+  };
+  Weekday day = Weekday.MO;
+  printWeekSchedule(student1);
+//  printDaySchedule(student1, day);
+ // printWhenMensa(student1, student2, day);
+}
+
+void printWeekSchedule(Map<Weekday, List<String>> student) {
+      //prints all values
+      for(var items in student.values){
+        for(int i=0;i<items.length;i++){
+          print(items[i]);
+        }
+      }
+       
+}
+
+void printDaySchedule() {
+}
+
+void printWhenMensa() {
+
 }

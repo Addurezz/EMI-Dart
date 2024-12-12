@@ -16,18 +16,22 @@ void main() {
     Weekday.FR: ["", "VL: AUD", "VL: Mathe", "", "", ""],
   };
   Weekday day = Weekday.MO;
-  // printWeekSchedule(student1);
+  printWeekSchedule(student1);
   printDaySchedule(student1, day);
- // printWhenMensa(student1, student2, day);
+  printWhenMensa(student1, student2, day);
 
 }
 
-void printWeekSchedule() {
-      
+void printWeekSchedule(var student) {
+  for (int i = 0; i < 5; i++) {
+    printDaySchedule(student, Weekday.values[i]);
+    print("\n");
+  }
 }
 
 void printDaySchedule(Map<Weekday, List<String>> student, Weekday day) {
-
+  print("Tag: ${day}");
+  print("-----------------");
     student[day]?.forEach((item) {
       if(item==""){
         print("frei");

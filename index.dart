@@ -30,5 +30,5 @@ printDaySchedule() {
 }
 
 printWhenMensa() {
-
+ //jdas
 }

@@ -17,11 +17,11 @@ void main() {
   };
   Weekday day = Weekday.MO;
   printWeekSchedule(student1);
-  printDaySchedule(student1, day);
-  printWhenMensa(student1, student2, day);
+  //printDaySchedule(student1, day);
+  //printWhenMensa(student1, student2, day);
 }
 
-printWeekSchedule() {
+printWeekSchedule(Map<Weekday, List<String>> student) {
 
 }
 

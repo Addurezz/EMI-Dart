@@ -30,19 +30,23 @@ void printWeekSchedule(var student) {
 }
 
 void printDaySchedule(Map<Weekday, List<String>> student, Weekday day) {
-  print("Tag: ${day}");
+
+  print("Tag: ${getWeekday(day)}");
   print("-----------------");
-    student[day]?.forEach((item) {
-      if(item==""){
-        print("frei");
-      }
-      else{
-      print(item);
-      }
-    });
+  int i = 1;
+  student[day]?.forEach((item) {
+    if(item==""){
+      print("${i}. frei");
+      i++;
+    }
+    else{
+      print("${i}. ${item}");
+      i++;
+    }
+  });
 }
 
-printWhenMensa(Map student1, Map student2, Weekday day) {
+void printWhenMensa(Map student1, Map student2, Weekday day) {
 
   List<int> eat = [];
 
@@ -51,6 +55,28 @@ printWhenMensa(Map student1, Map student2, Weekday day) {
       eat.add(i+1);
     }
   }
+
+  //if eat is empty, there are no free double lessons
+  if (eat.isEmpty){
+    print("Ihr könnt an diesem Tag nicht in der Mensa essen gehen.");
+    return;
+  }
   
   print("Ihr könnt in folgenden Doppelstunden essen gehen: ${eat}");
+}
+
+//get the string representation of the weekday
+String getWeekday(Weekday day) {
+  switch (day) {
+    case Weekday.MO:
+      return "Montag";
+    case Weekday.DI:
+      return "Dienstag";
+    case Weekday.MI:
+      return "Mittwoch";
+    case Weekday.DO:
+      return "Donnerstag";
+    case Weekday.FR:
+      return "Freitag";
+  }
 }
